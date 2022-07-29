@@ -1,2 +1,5 @@
 language = "undefined"
-run = ""
+run = "bash"
+
+[nix]
+channel = "stable-22_05"
