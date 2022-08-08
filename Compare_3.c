@@ -1,22 +1,32 @@
 #include<stdio.h>
 
-float find_largest (int a, int b)
+float find_largest (int x, int y, int z)
 {
-  char c;
-  if (a < b) {
-    c = b;
+  float c;
+  if (x < y) {
+    if (y > z) {
+      c = y;
+      }
+    else {
+      c = z;
+    }
   }
   else{
-    c = a;
+    if (x > z){
+      c = x;
+    }
+    else {
+      c = z;
+    }
   }
   return c;
 }
 
 int main(){
-  float a,b;
-  printf("Enter the two numbers:\n");
-  scanf("%f%f", &a, &b);
-  float c = find_largest(a,b);
-  printf("The largest number among %f and %f is %f\n",a,b,c);
+  float x,y,z;
+  printf("Enter the three numbers:\n");
+  scanf("%f%f%f", &x, &y, &z);
+  float c = find_largest(x,y,z);
+  printf("The largest number among %f, %f and %f is %f\n",x,y,z,c);
   return 0;
 }

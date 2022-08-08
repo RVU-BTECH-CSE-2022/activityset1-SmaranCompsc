@@ -1,6 +1,7 @@
 #include<stdio.h>
 
+float AreaOfRect.c(d)
+
 float main(void){
-  float l = 1.0;
-  printf("%f",l);
+  printf("Enter the");
 }
