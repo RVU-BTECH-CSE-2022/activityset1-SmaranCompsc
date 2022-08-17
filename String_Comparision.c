@@ -12,54 +12,57 @@ void inputword(char str[],int x)
   scanf("%s", str);
 }
 
-void strcompare(int n1, int n2, char str1[], char str2[])
+int strcompare(int n1, int n2, char str1[], char str2[])
 {
   int len = n1;
   if(len>n2)
   {
     len = n2;
   }
-  output(str1, str2, 0);
+  int l = 0 ;
   for(int i = 0; i<len; i++)
   {
     if (str1[i]<str2[i])
     {
-      output(str1, str2, 1);
-      return;
+      l = 1;
+      return l;
     }
     else if (str1[i]>str2[i])
     {
-      output(str1, str2, 2);
-      return;
+      l = 2;
+      return l;
     }
   }
   
   if (n1 == n2)
   {
-    printf("Both words are the same...\n");
-  }
+    l = 0;
+    }
   else if (n1<n2)
   {
-    output(str1, str2, 1);
-  }
+    l = 1;
+    }
   else if (n1>n2)
   {
-    output(str1, str2, 2);
+    l = 2;
   }
-  return;
+  return l;
 }
 
-void output(char str1[], char str2[], int i)
+void output(char str1[], char str2[], int l)
 {
-  if (i == 0)
+  printf("The given words are %s and %s.\n", str1, str2);
+
+  if (l == 0)
   {
-    printf("The given words are %s and %s.\n", str1, str2);
+    printf("Both words are the same...\n");
   }
-  else if (i == 1)
+  
+  else if (l == 1)
   {
     printf("%s comes first.\n",str1);
   }
-  else if (i == 2)
+  else if (l == 2)
   {
     printf("%s comes first.\n",str2);;
   }
@@ -73,6 +76,7 @@ int main () {
   char str2[n2];
   inputword(str1, 1);
   inputword(str2, 2);
-  strcompare(n1, n2, str1, str2);
+  int l = strcompare(n1, n2, str1, str2);
+  output(str1, str2, l);
   return 0;
 }
