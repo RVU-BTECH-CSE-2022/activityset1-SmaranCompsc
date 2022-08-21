@@ -7,11 +7,14 @@ void inputlim(int *n, int x)
   scanf("%d", n);
 }
 */
-
+// NOT COMPLETE
 void input(char str1[], char str2[])
 {
+  /*
   inputword(str1, 1);
   inputword(str2, 2);
+  */
+  printf("Enter word no. %d: ", x);
 }
 
 void inputword(char str[],int x)
@@ -20,31 +23,20 @@ void inputword(char str[],int x)
   scanf("%s", str);
 }
 
-int lenword(char str[])
+/*int lenword(char str[])
 {
-  int l = 0;
-  for(int i = 0; i < MAX_LIMIT; i++)
-  {
-    if (str[i] == "")
-    {
-      break;
-    }
-    else
-    {
-      l = i;
-    }
-  }
-  printf("Len:%d",l);
-  return l;
+  int i = 0;
+  for(i = 0; str[i] != '\0'; i++);
+  return i;
+
+
+void length(char str1[], char str2[], int *n1, int *n2)
+{
+  *n1 = lenword(str1);
+  *n2 = lenword(str2);
+  return;
 }
 
-int length(char str1[], char str2[], int *n1, int *n2)
-{
-  n1 = lenword(str1);
-  n2 = lenword(str2);
-  printf("%d,%d\n",n1,n2);
-  return 0;
-}
 
 void strcompare(int n1, int n2, char str1[], char str2[])
 {
@@ -54,6 +46,7 @@ void strcompare(int n1, int n2, char str1[], char str2[])
     len = n2;
   }
   output(str1, str2, 0);
+  
   for(int i = 0; i<len; i++)
   {
     if (str1[i]<str2[i])
@@ -67,7 +60,12 @@ void strcompare(int n1, int n2, char str1[], char str2[])
       return;
     }
   }
+  */
+
+void str_compare(char str1[], char str2[])
+{
   
+}
   if (n1 == n2)
   {
     printf("Both words are the same...\n");
